@@ -25,4 +25,16 @@ public class UpdateProfile {
     public static final Target SAVE_PROFILE = Target
             .the("Save profile")
             .located(By.id("save-profile"));
+
+    public static final Target CHECK_BOX_M = Target
+            .the("Check box masculino")
+            .located(By.xpath("//input[@id='M']"));
+
+    public static final Target CHECK_BOX_F = Target
+            .the("Check box femenino")
+            .located(By.xpath("//input[@id='F']"));
+
+    public static final Target VALIDATE_SAVE_PROFILE = Target
+            .the("validate that the information was saved")
+            .located(By.xpath("//p[@class='confirmation-modal-info']"));
 }
