@@ -11,9 +11,9 @@ Feature: Update my profile information
       | holadiosito | soyyodenuevo |
     When we click the personal information button
     And change the '<firstName>', '<lastName>', '<dateOfBirth>', '<country>', <sexo>
-    Then we save the changes Guardar
+    Then we save the changes Tu información se guardó correctamente
     Examples:
       | firstName   | lastName     | dateOfBirth  | country          | sexo        |
       | "Cabio"     | "Mcgarrette" | "14/02/2000" | "Colombia"       | "Masculino" |
       | "Elizabeth" | "Cruz"       | "23/02/1995" | "Estados Unidos" | "Femenino"  |
-      | "Cristiano" | "Ronaldo"    | "23/02/1980" | "Argentina"      | "Masculino" |
+      | "Michel"    | "Razo"       | "23/02/1980" | "Argentina"      | "Femenino"  |
