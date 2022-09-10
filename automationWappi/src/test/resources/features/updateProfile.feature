@@ -1,4 +1,7 @@
 Feature: Update my profile information
+  As AQ Automation
+  I want to Update my profile information
+  To have my data updated
 
   Scenario Outline: Update profile
 
