@@ -39,4 +39,7 @@ public class PlaceOrderInitiation {
             .the("Close confirmation window")
             .located(By.xpath("(//span[@class='close'])[3]"));
 
+    public static final Target CLOSE_WINDOW_UPDATE_DATA = Target
+            .the("Close the window with update data")
+            .located(By.xpath("(//span[@class='close'])[2]"));
 }
