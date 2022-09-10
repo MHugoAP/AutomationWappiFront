@@ -1,5 +1,6 @@
 package com.speedup.qa.stepdefinition;
 
+import com.github.javafaker.Faker;
 import com.speedup.qa.models.*;
 import com.speedup.qa.questions.UpdateProfileSaveButtonQ;
 import com.speedup.qa.tasks.*;
@@ -40,7 +41,7 @@ public class updateProfileStepDefinition {
 
     @And("^login with username and password$")
     public void loginWithUsernameAndPassword(List<LoginUserData> data) {
-        int number = (int) (Math.random()*3+1);
+        int number = (int) (Math.random() * 3 + 1);
         OnStage.theActorInTheSpotlight().attemptsTo(LoginUserPassword.withTheData(data.get(number)));
     }
 
@@ -55,18 +56,21 @@ public class updateProfileStepDefinition {
         OnStage.theActorInTheSpotlight().attemptsTo(UpdateProfileLastName.updateProfileLastName(lastName));
         OnStage.theActorInTheSpotlight().attemptsTo(UpdateProfileBirth.withTheData(birth));
         Select menu1 = new Select(myBrowser.findElement(MODIFY_COUNTRY));
-        String arg ="Argentina";
-        String col="Colombia";
-        String eua="Estados Unidos";
+        String arg = "Argentina";
+        String col = "Colombia";
+        String eua = "Estados Unidos";
         if (arg.equals(country.getCountry())) {
             menu1.selectByIndex(1);
-        }else if (col.equals(country.getCountry())){
+        } else if (col.equals(country.getCountry())) {
             menu1.selectByIndex(2);
-        } else if (eua.equals(country.getCountry())){
+        } else if (eua.equals(country.getCountry())) {
             menu1.selectByIndex(3);
         }
         OnStage.theActorInTheSpotlight().attemptsTo(UpdateProfileSexo.withTheDataSex(sex));
         myBrowser.findElement(SELECT_PHOTO).sendKeys("C:\\Users\\drago\\OneDrive\\Escritorio\\unknown.png");
+        /*Faker faker = new Faker();
+        String image = faker.company().logo();
+        myBrowser.findElement(SELECT_PHOTO).sendKeys(faker.company().logo());*/
     }
 
     @Then("^we save the changes (.*)$")
