@@ -27,8 +27,11 @@ public class PlaceOrderBuyCoupon implements Task {
             throw new RuntimeException(e);
         }
         actorBuyCoupon.attemptsTo(Click.on(CONFIRM_ORDER));
-
-
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         actorBuyCoupon.attemptsTo(Click.on(CLOSE_CONFIRMATION_WINDOW));
     }
 
