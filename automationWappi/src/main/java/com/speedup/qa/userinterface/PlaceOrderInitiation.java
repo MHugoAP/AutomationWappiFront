@@ -38,4 +38,5 @@ public class PlaceOrderInitiation {
     public static final Target CLOSE_CONFIRMATION_WINDOW = Target
             .the("Close confirmation window")
             .located(By.xpath("(//span[@class='close'])[3]"));
+
 }
