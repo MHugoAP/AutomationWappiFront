@@ -25,3 +25,4 @@ Feature: Complete route
     Examples:
       | firstName   | lastName     | dateOfBirth  | country          | sexo        |
       | "Elizabeth" | "Cruz"       | "23/02/1995" | "Estados Unidos" | "Femenino"  |
+      | "Michel"    | "Razo"       | "23/02/1980" | "Argentina"      | "Femenino"  |

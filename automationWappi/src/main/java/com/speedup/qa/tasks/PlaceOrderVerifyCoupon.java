@@ -13,13 +13,13 @@ public class PlaceOrderVerifyCoupon implements Task {
     public <T extends Actor> void performAs(T actorVerifyCoupon) {
         actorVerifyCoupon.attemptsTo(Click.on(MY_ORDERS));
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
         actorVerifyCoupon.attemptsTo(Click.on(VERIFY_COUPON));
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
