@@ -2,6 +2,7 @@ package com.speedup.qa.tasks;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.By;
@@ -20,9 +21,9 @@ public class UpdateProfilePhoto implements Task {
     public <T extends Actor> void performAs(T actorPhoto) {
         File file= new File("C:\\Users\\drago\\OneDrive\\Escritorio\\unknown.png");
         String path= file.getAbsolutePath();
-        myBrowser.findElement(SELECT_PHOTO).sendKeys(path);
+        myBrowser.findElement(SELECT_PHOTO).sendKeys("C:\\Users\\drago\\OneDrive\\Escritorio\\unknown.png");
     }
     public static UpdateProfilePhoto profilePhoto(){
-        return new UpdateProfilePhoto();
+        return Tasks.instrumented(UpdateProfilePhoto.class);
     }
 }

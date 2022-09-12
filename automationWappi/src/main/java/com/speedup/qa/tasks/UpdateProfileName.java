@@ -16,10 +16,8 @@ public class UpdateProfileName implements Task {
     }
     @Override
     public <T extends Actor> void performAs(T actorUpdate) {
-        /*for (int i = 0; i < 2; i++) {
-            actorUpdate.attemptsTo(Click.on(MODIFY_NAME));
-        }*/
         actorUpdate.attemptsTo(Enter.theValue(updateDataNameInstance.getName()).into(MODIFY_NAME));
+
     }
 
     public static UpdateProfileName updateProfile(UpdateDataName updateDataName){

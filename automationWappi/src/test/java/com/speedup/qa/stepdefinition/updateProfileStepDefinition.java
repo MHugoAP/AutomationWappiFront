@@ -51,10 +51,13 @@ public class updateProfileStepDefinition {
     }
 
     @And("^change the '\"([^\"]*)\"', '\"([^\"]*)\"', '\"([^\"]*)\"', '\"([^\"]*)\"', \"([^\"]*)\"$")
-    public void changeThe(UpdateDataName firstName, UpdateDataLastName lastName, UpdateDataBirth birth, UpdateDataCountry country, UpdateDataSexo sex) {
+    public void changeThe(UpdateDataName firstName, UpdateDataLastName lastName, UpdateDataBirth birth, UpdateDataCountry country, UpdateDataSexo sex) throws InterruptedException {
         OnStage.theActorInTheSpotlight().attemptsTo(UpdateProfileName.updateProfile(firstName));
+        Thread.sleep(1000);
         OnStage.theActorInTheSpotlight().attemptsTo(UpdateProfileLastName.updateProfileLastName(lastName));
+        Thread.sleep(1000);
         OnStage.theActorInTheSpotlight().attemptsTo(UpdateProfileBirth.withTheData(birth));
+        Thread.sleep(1000);
         Select menu1 = new Select(myBrowser.findElement(MODIFY_COUNTRY));
         String arg = "Argentina";
         String col = "Colombia";
@@ -67,7 +70,9 @@ public class updateProfileStepDefinition {
             menu1.selectByIndex(3);
         }
         OnStage.theActorInTheSpotlight().attemptsTo(UpdateProfileSexo.withTheDataSex(sex));
+        Thread.sleep(1000);
         myBrowser.findElement(SELECT_PHOTO).sendKeys("C:\\Users\\drago\\OneDrive\\Escritorio\\unknown.png");
+        Thread.sleep(1000);
         /*Faker faker = new Faker();
         String image = faker.company().logo();
         myBrowser.findElement(SELECT_PHOTO).sendKeys(faker.company().logo());*/
@@ -78,7 +83,7 @@ public class updateProfileStepDefinition {
         OnStage.theActorInTheSpotlight().attemptsTo(UpdateProfileSave.updateProfileSave());
         if (save == save) {
             OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(UpdateProfileSaveButtonQ.messageSaveButton(), org.hamcrest.Matchers.is(save)));
-            System.out.println("The information was saved correctly");
+            //System.out.println("The information was saved correctly");
         }
         OnStage.theActorInTheSpotlight().attemptsTo(BackToTop.backToTop());
     }
