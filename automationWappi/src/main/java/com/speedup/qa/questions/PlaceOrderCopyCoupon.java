@@ -15,6 +15,7 @@ public class PlaceOrderCopyCoupon implements Question<String> {
     public String answeredBy(Actor actorCopy) {
         return BrowseTheWeb.as(actorCopy).find(COPY_COUPON).getText();
     }
+
     public static PlaceOrderCopyCoupon messageCopy(){
         return new PlaceOrderCopyCoupon();
     }

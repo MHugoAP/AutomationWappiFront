@@ -33,10 +33,10 @@ public class placeOrderStepDefinition {
     public void youCanFinishWithThePurchase(String confirm) throws InterruptedException {
         if (confirm == confirm) {
             OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(PlaceOrderConfirmer.placeOrderConfirmer(), org.hamcrest.Matchers.is(confirm)));
-            System.out.println("Confirmation accepted and processing to finish");
+           // System.out.println("Confirmation accepted and processing to finish");
         }
         Thread.sleep(3000);
         OnStage.theActorInTheSpotlight().attemptsTo(Close.close());
-        System.out.println("Completed order");
+        //System.out.println("Completed order");
     }
 }

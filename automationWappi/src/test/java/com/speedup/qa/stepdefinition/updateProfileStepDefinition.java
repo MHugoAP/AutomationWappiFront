@@ -83,7 +83,7 @@ public class updateProfileStepDefinition {
         OnStage.theActorInTheSpotlight().attemptsTo(UpdateProfileSave.updateProfileSave());
         if (save == save) {
             OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(UpdateProfileSaveButtonQ.messageSaveButton(), org.hamcrest.Matchers.is(save)));
-            System.out.println("The information was saved correctly");
+            //System.out.println("The information was saved correctly");
         }
         OnStage.theActorInTheSpotlight().attemptsTo(BackToTop.backToTop());
     }
